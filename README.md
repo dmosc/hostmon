@@ -1,7 +1,13 @@
-### Steps to build and run the program
+### Build and run
+
+Requires CMake 3.25+, Ninja, and vcpkg with `VCPKG_ROOT` set (typically
+`VCPKG_ROOT="$HOME/vcpkg"`).
+
+Build presets available: `debug`, `asan` and `release`.
 
 ```bash
-cmake -B build -S . -G Ninja -DCMAKE_TOOLCHAIN_FILE="$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
-cmake --build build
-./build/hostmon
+cmake --preset debug
+cmake --build --preset debug
+ctest --preset debug
+./build/debug/app/hostmon  # press 'q' to quit
 ```
