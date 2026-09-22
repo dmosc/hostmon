@@ -2,6 +2,7 @@ add_library(
     hostmon_core
     STATIC
     hostmon/core/periodic_runner.cc
+    hostmon/cpu/cpu_usage.cc
 )
 add_library(hostmon::core ALIAS hostmon_core)
 
