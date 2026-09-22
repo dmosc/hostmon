@@ -4,6 +4,7 @@ add_library(
     hostmon/core/periodic_runner.cc
     hostmon/cpu/cpu_usage.cc
     hostmon/cpu/cpu_monitor.cc
+    src/hostmon/platform/macos/mach_cpu_tick_source.cc
 )
 add_library(hostmon::core ALIAS hostmon_core)
 
