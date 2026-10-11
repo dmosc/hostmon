@@ -4,12 +4,15 @@ add_library(
   hostmon/core/periodic_runner.cc
   hostmon/cpu/cpu_monitor.cc
   hostmon/cpu/cpu_usage.cc
+  hostmon/memory/memory_monitor.cc
+  hostmon/memory/memory_usage.cc
 )
 add_library(hostmon::core ALIAS hostmon_core)
 
 if(APPLE)
   target_sources(hostmon_core PRIVATE
     hostmon/platform/macos/mach_cpu_tick_source.cc
+    hostmon/platform/macos/mach_memory_sample_source.cc
   )
 endif()
 
